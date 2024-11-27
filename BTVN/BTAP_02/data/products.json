@@ -1,22 +1,22 @@
 [
     {
         "id": 1,
-        "name": "S\u1ea3n ph\u1ea9m A",
+        "name": "sản phâm a",
         "price": 150000
     },
     {
         "id": 2,
-        "name": "S\u1ea3n ph\u1ea9m B",
+        "name": "sản phẩm B",
         "price": 250000
     },
     {
         "id": 3,
-        "name": "S\u1ea3n ph\u1ea9m C",
+        "name": "sản phẩm C",
         "price": 350000
     },
     {
         "id": 4,
-        "name": "san pham D",
+        "name": "san phảm D",
         "price": 30000
     },
     {

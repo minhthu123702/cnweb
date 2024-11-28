@@ -1,9 +1,9 @@
 <?php
-$questions = file("questions.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$questions = file("Quiz.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 $answers = [];
 foreach ($questions as $line) {
-    if (strpos($line, "Đáp án:") !== false) {
+    if (strpos($line, "ANSWER: ") !== false) {
         $answers[] = trim(substr($line, strpos($line, ":") + 1));
     }
 }

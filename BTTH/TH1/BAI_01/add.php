@@ -1,39 +1,29 @@
 <?php
 session_start();
 require 'functions.php'; 
-
-// Khởi tạo giá trị mặc định cho $error và $success
 $error = '';
 $success = '';
-
-// Xử lý thêm sản phẩm
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Lấy giá trị từ form
     $name = trim($_POST['name']);
     $description = trim($_POST['description']);
     $image = '';
-
-    // Kiểm tra trường hợp thiếu dữ liệu
     if (empty($name) || empty($description)) {
         $_SESSION['error'] = "Vui lòng nhập đầy đủ thông tin!";
         header("Location: add.php");
         exit();
     }
-
-    // Xử lý upload ảnh
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
-        $uploadDir = 'images/'; // Thư mục lưu ảnh
+        $uploadDir = 'images/'; 
         if (!is_dir($uploadDir)) {
-            mkdir($uploadDir, 0777, true); // Tạo thư mục nếu chưa tồn tại
+            mkdir($uploadDir, 0777, true);
         }
         $fileName = basename($_FILES['image']['name']);
         $imagePath = $uploadDir . $fileName;
 
-        // Kiểm tra loại file hợp lệ (chỉ cho phép jpg, png, gif)
         $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
         if (in_array($_FILES['image']['type'], $allowedTypes)) {
             if (move_uploaded_file($_FILES['image']['tmp_name'], $imagePath)) {
-                $image = $imagePath; // Lưu đường dẫn ảnh
+                $image = $imagePath; 
             } else {
                 $_SESSION['error'] = "Không thể tải lên hình ảnh.";
                 header("Location: add.php");
@@ -49,8 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: add.php");
         exit();
     }
-
-    // Thêm hoa vào cơ sở dữ liệu
     if (addFlower($name, $description, $image)) {
         $_SESSION['success'] = "Thêm hoa thành công!";
         header("Location: admin.php");
@@ -61,8 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 }
-
-// Hiển thị lỗi hoặc thông báo từ session (nếu có)
 $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
 $success = isset($_SESSION['success']) ? $_SESSION['success'] : '';
 unset($_SESSION['error'], $_SESSION['success']);

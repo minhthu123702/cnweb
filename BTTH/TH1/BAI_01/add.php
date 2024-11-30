@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'functions.php'; // File chứa các hàm xử lý cơ sở dữ liệu
+require 'functions.php'; 
 
 // Khởi tạo giá trị mặc định cho $error và $success
 $error = '';

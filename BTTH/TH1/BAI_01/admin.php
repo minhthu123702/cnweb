@@ -56,8 +56,8 @@
                      <td><?php echo htmlspecialchars($flower['description']); ?></td>
                      <td><img src="<?php echo htmlspecialchars($flower['image']); ?>" alt="<?php echo htmlspecialchars($flower['name']); ?>"></td>
                      <td>
-                         <a href="edit.php?id=<?php echo $flower['id']; ?>">🖊️</a>
-                         <a href="delete.php?id=<?php echo $flower['id']; ?>" onclick="return confirm('Bạn có chắc muốn xóa không?')">❌</a>
+                         <a href="edit.php?id=<?php echo $flower['id']; ?>"><button>sửa</button></a>
+                         <a href="delete.php?id=<?php echo $flower['id']; ?>" onclick="return confirm('Bạn có chắc muốn xóa không?')"><button>xoá</button></a>
                      </td>
                  </tr>
              <?php endforeach; ?>

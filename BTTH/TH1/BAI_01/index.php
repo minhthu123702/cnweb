@@ -87,7 +87,6 @@ $flowers = getFlowers();
 </style>
 
 <body>
-    <!-- Header -->
     <header>
         <nav class="logo">
             <a href="./admin.php">Administration</a>

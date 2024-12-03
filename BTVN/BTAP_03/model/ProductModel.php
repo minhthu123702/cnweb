@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ .'/../configs/data.php';
+require_once __DIR__ .'/../configs/productDB.php';
 class ProductModel{
     public static function getAllProduct(){
         global $conn;#Use conn to database.php

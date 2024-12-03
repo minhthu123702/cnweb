@@ -2,6 +2,7 @@
 <?php
 require_once __DIR__ . '/../model/AdminModel.php';
 class AdminController{
+    //Requied index
     public function index(){
         require __DIR__ .'/../view/AdminView/admin.php';
     }

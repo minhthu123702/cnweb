@@ -25,7 +25,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <a class="nav-link" href="#article">Article</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#images">Images</a>
+                    <a class="nav-link" href="#image">Images</a>
                 </li>
             </ul>
             <form class="d-flex">

@@ -1,7 +1,7 @@
 <?php
 // index.php - Entry point application
 // 1. kết nối database
-require_once './configs/data.php';
+require_once './configs/adminDB.php';
 // 2. Nhận thông tin bộ điều khiển và hành động từ URL
 # Nếu không có tham số bộ điều khiển trên URL, mặc định là 'Admin'
 $controller = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Admin';

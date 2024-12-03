@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ .'/../configs/data.php';
+require_once __DIR__ .'/../configs/adminDB.php';
 class AdminModel{
     public static function Login($username, $password){
         global $conn;

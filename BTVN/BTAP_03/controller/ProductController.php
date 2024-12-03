@@ -1,8 +1,9 @@
 <?php
-define('BASE_URL', '/BTVN_MVC');
+define('BASE_URL', '/BTAP_03');
 require_once __DIR__ . '/../model/ProductModel.php';
 class ProductController
 {
+    #Requied index product
     public function index()
     {
         $products = ProductModel::getAllProduct();
@@ -29,7 +30,7 @@ class ProductController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if(isset($_POST['addProductBtn'])&&$_POST['addProductBtn']==="Add"){
                 if (isset($_POST['name'], $_POST['price'])) {
-                    $target_dir = "../asset/image/"; //Folder server, where to save image store
+                    $target_dir = "/asset/image/"; //Folder server, where to save image store
                     $target_file = $target_dir . basename($_FILES["image"]["name"]); // Path to file
                     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file); //upload file
                     // Path web display image
@@ -58,7 +59,7 @@ class ProductController
                     $target_dir = __DIR__."/../asset/image/";
                     $target_file = $target_dir . basename($_FILES["image"]["name"]);
                     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-                    $image_url = BASE_URL . '/asset/image/' . basename($_FILES["image"]["name"]);
+                    $image_url = BASE_URL . '../asset/image/' . basename($_FILES["image"]["name"]);
                 }else {
                     //Get the current image URL from the database
                     $products = ProductModel::getProductById($id);

@@ -30,11 +30,11 @@ class ProductController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if(isset($_POST['addProductBtn'])&&$_POST['addProductBtn']==="Add"){
                 if (isset($_POST['name'], $_POST['price'])) {
-                    $target_dir = "/asset/image/"; //Folder server, where to save image store
+                    $target_dir = "./asset/image/"; 
                     $target_file = $target_dir . basename($_FILES["image"]["name"]); // Path to file
                     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file); //upload file
                     // Path web display image
-                    $image_url = BASE_URL . '/asset/image/' . basename($_FILES["image"]["name"]);
+                    $image_url = BASE_URL . '../asset/image/' . basename($_FILES["image"]["name"]);
                     $name = $_POST['name'];
                     $price = $_POST['price'];
                     $result=ProductModel::addProduct($name,$price,$image_url);

@@ -17,11 +17,11 @@ class LibrariesTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 10; $i++) { // Sinh 10 thư viện ngẫu nhiên
+        for ($i = 0; $i < 10; $i++) { 
             DB::table('libraries')->insert([
-                'name' => $faker->company . ' Library', // Tên thư viện
-                'address' => $faker->address, // Địa chỉ ngẫu nhiên
-                'contact_number' => $faker->phoneNumber, // Số điện thoại ngẫu nhiên
+                'name' => $faker->company . ' Library', 
+                'address' => $faker->address, 
+                'contact_number' => $faker->phoneNumber, 
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
